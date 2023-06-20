@@ -1,20 +1,22 @@
 <div class="header">
-  <h1
+  <h1 class="text-center text-grey-darker">TIC TAC TOE</h1>
+  <br /><br />
+  <h3 class="text-centre text-black-lighter">1st Player starts with X</h3>
+  <h3 class="text-centre text-black-lighter">2nd Player starts with O</h3>
+  <br />
+  <h2
     class="text-center text-orange"
     *ngIf="gameService.isGameRunning"
     [ngClass]="{ 'text-teal': gameService.activePlayer == 'O' }"
   >
     {{ gameService.activePlayer }}'S TURN
-    <h1 class="text-center text-grey-darker">TIC TAC TOE</h1>
-  </h1>
-  <h1 class="text-center text-grey-darker" *ngIf="!gameService.isGameRunning">
-    Tic-Tac-Toe
-  </h1>
+  </h2>
+  <h2 *ngIf="!gameService.isGameRunning"></h2>
 </div>
 <app-board></app-board>
-<h1 class="text-center text-grey-darker" *ngIf="gameService.winner">
+<h2 class="text-center text-grey-darker" *ngIf="gameService.winner">
   {{ gameService.activePlayer }} WON
-</h1>
+</h2>
 
 <button
   class="
@@ -29,7 +31,6 @@
     block
     mt-5
   "
-  *ngIf="gameService.gameOver"
   (click)="resetGame()"
 >
   Reset
