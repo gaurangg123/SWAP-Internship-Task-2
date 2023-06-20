@@ -1,9 +1,8 @@
 section {
-  width: 600px;
+  width: 800px;
   display: flex;
   justify-content: space-evenly;
   align-content: space-between;
-  align-items: center;
   margin: 7% auto 50px auto;
   flex-wrap: wrap;
 }

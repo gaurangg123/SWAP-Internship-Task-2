@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { GameService } from "../game.service";
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-square',
@@ -9,48 +9,44 @@ import { GameService } from "../game.service";
       shadow-md " 
       (click)="changePlayer()" 
       [ngClass]="{noClick: gameService.winner} "
-    >
-      <p class="text-grey-darker"> {{ square.state}} </p>
+    >  
+    <p class="text-grey-darker"> {{ square.state}} </p>
     </div>
    `,
-  styles: [`
+  styles: [
+    `
     .game-square { 
       height: 96%; 
       text-align: center;
-      line-height: 0.85;
-      cursor: pointer;
+      line-height: center;
+      cursor: center;
     }
 
     p { 
       display: inline;
-      margin: 0px;
-      font-size: 14rem;
+      margin: center;
+      font-size: 150px;
       overflow: hidden;
     }
 
     .noClick {
       pointer-events: none;
-    }`
-  ]
+    }`,
+  ],
 })
 export class SquareComponent implements OnInit {
+  @Input() square;
 
-  @Input() square; 
+  constructor(public gameService: GameService) {}
 
-  constructor( public gameService: GameService) { }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
-  changePlayer(){ 
-
+  changePlayer() {
     this.gameService.isGameRunning = true;
 
-    if ( this.gameService.isGameRunning && this.square.state === null ){
-      this.square.state =  this.gameService.activePlayer;
-      this.gameService.changePlayerTurn( this.square);
+    if (this.gameService.isGameRunning && this.square.state === null) {
+      this.square.state = this.gameService.activePlayer;
+      this.gameService.changePlayerTurn(this.square);
     }
-    
   }
- 
 }
