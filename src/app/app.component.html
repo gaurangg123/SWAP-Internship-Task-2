@@ -14,8 +14,8 @@
     {{ gameService.activePlayer }}'S TURN
   </h2>
   <h2 *ngIf="!gameService.isGameRunning"></h2>
-  <h2 class="text-center text-grey-darker" *ngIf="gameService.winner">
-    {{ gameService.activePlayer }} WON
+  <h2 class="text-center text-white" *ngIf="gameService.winner">
+    {{ gameService.activePlayer }} Player WON
   </h2>
 </div>
 <app-board></app-board>
