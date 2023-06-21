@@ -10,8 +10,11 @@ section {
 .square-container {
   flex: 0 0 32%;
   margin: auto;
+  max-height: fit-content;
 }
 
 .square-container:hover {
   background-color: red;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
