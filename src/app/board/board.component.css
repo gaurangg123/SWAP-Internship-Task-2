@@ -9,4 +9,9 @@ section {
 
 .square-container {
   flex: 0 0 32%;
+  margin: auto;
+}
+
+.square-container:hover {
+  background-color: bisque;
 }
